@@ -4,9 +4,17 @@
 login
 @endsection
 
+@push("styles")
+<link href="{{ asset('css/forms.css') }}" rel="stylesheet" type="text/css" />
+@endpush
+
 @section("content")
-<form method="POST">
+<form method="POST" class="site-form">
 @csrf
+    <div class="form-name">
+        Login Form
+    </div>
+
     <div class="form-field">
         <label class="field__label">
             <span for="" class="label-name">Email:</span><br>
@@ -25,8 +33,13 @@ login
             @enderror
         </label>
     </div>
-    <div class="form-field">
+    <div class="form-field btn-field">
         <button class="btn-submit">Log in</button>
+    </div>
+
+    <div class="form-field invitation-msg">
+        Not a member?
+        <a href="{{ route('register') }}">Sign up</a>
     </div>
 </form>
 @endsection

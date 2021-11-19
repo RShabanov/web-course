@@ -3,14 +3,9 @@
         
         <title>@yield('title')</title>
         
-        @stack("styles")
+        <link href="{{ asset('css/common.css') }}" rel="stylesheet" type="text/css" />
 
-        <style>
-            *, body {
-                margin: 0;
-                padding: 0;
-            }
-        </style>
+        @stack("styles")
 
     </head>
     <body>

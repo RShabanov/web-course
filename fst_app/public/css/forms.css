@@ -1,0 +1,75 @@
+.site-form {
+    width: 384px;
+    border: 1px solid #cccccc;
+    border-radius: 24px;
+
+    padding: 24px;
+
+    margin: 100px auto;
+}
+
+.form-name {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #505050;
+    margin: 10px auto 40px;
+}
+
+.form-field {
+    margin-bottom: 18px;
+}
+
+.field__input {
+    width: 100%;
+    font-size: 18px;
+    margin-top: 10px;
+
+    font-weight: 200;
+    color: #5a5a5a;
+
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    outline: none;
+}
+
+.label-name {
+    color: #404040;
+    font-size: 18px;
+}
+
+.btn-field {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-submit {
+    text-align: center;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 10px;
+    background-color: #594a7a;
+    font-size: 18px;
+    color: #f0f0f0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.error-msg {
+    margin-top: 10px;
+    color: #d04141;
+}
+
+.invitation-msg {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 32px;
+    color: #303030;
+}
+
+.invitation-msg > a {
+    text-decoration: none;
+    color: #6b5991;
+    font-weight: bold;
+}
