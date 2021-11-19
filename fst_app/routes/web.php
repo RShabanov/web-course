@@ -19,15 +19,17 @@ use App\Http\Controllers\RegisterController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::prefix("auth")->group(function() {
     Route::redirect('/', '/auth/login');
     
-    Route::get("/login", [LoginController::class, 'index']);
-    Route::post("/login", [LoginController::class, 'login']);
+    Route::get("/login", [LoginController::class, 'index'])->name("login");
+    Route::post("/login", [LoginController::class, 'authenticate']);
 
-    Route::get("/register", [RegisterController::class, "index"]);
+    Route::get("/logout", [LoginController::class, "logout"])->name("logout");
+
+    Route::get("/register", [RegisterController::class, "index"])->name("register");
     Route::post("/register", [RegisterController::class, "register"]);
 });

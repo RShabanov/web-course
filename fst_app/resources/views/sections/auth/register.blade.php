@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
+@section("title")
+create account
+@endsection
+
 @section("content")
 <form method="POST">
 @csrf
     <div class="form-field">
         <label class="field__label">
             <span for="" class="label-name">Username:</span><br>
-            <input type="text" name="username" class="field__input" value="{{ old('username') }}">
+            <input type="text" name="name" class="field__input" value="{{ old('name') }}">
         </label>
     </div>
     <div class="form-field">

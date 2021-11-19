@@ -4,16 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Password;
+use Illuminate\Database\CreateUsersTable;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class RegisterController extends Controller
 {
-    protected static $fields = [
-        'username',
-        'email',
-        'password',
-        'password-confirm',
-    ];
-
     /**
      * Show the form to register
      * 
@@ -21,20 +17,21 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return view('auth.register');
+        return view('sections.auth.register');
     }
     
     public function register(Request $request) {
         $request->validate([
-            'username' => 'required',
+            'name' => 'required',
             'email' => ['required', 'email'],
             'password' => ['required', 'confirmed', Password::min(8)],
         ]);
 
-        $username = $request->username;
-        $email = $request->email;
-        $password = $request->password;
+        $user = User::create(request(['name', 'email', 'password']));
+        auth()->login($user);
 
-        return 'Hello, ' . $username . ' (' . $email . ')';
+        $request->session()->regenerate();
+
+        return redirect()->intended('/');
     }
 }
