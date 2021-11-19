@@ -8,7 +8,8 @@
     <nav class="page-header__nav">
         <span class="auth-nav">
             @if( auth()->check() )
-            <a class="nav__a" href="{{ route('logout') }}">log out</a>
+            <a class="nav__a" href="{{ route('add-song') }}">Add song</a>
+            <a class="nav__a" href="{{ route('logout') }}">Log out</a>
             @endif
         </span>
     </nav>

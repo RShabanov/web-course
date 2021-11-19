@@ -7,6 +7,7 @@ use Illuminate\Validation\Rules\Password;
 use Illuminate\Database\CreateUsersTable;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -17,7 +18,7 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return view('sections.auth.register');
+        return view('auth.register');
     }
     
     public function register(Request $request) {
@@ -28,6 +29,8 @@ class RegisterController extends Controller
         ]);
 
         $user = User::create(request(['name', 'email', 'password']));
+        event(new Registered($user));
+
         auth()->login($user);
 
         $request->session()->regenerate();

@@ -18,7 +18,7 @@ class LoginController extends Controller
     {
         if (Auth::check()) redirect("/");
 
-        return view('sections.auth.login');
+        return view('auth.login');
     }
 
     public function authenticate(Request $request)
@@ -47,6 +47,6 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('login');
     }
 }

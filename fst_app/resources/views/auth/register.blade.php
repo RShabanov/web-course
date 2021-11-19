@@ -49,7 +49,7 @@ create account
         </label>
     </div>
     <div class="form-field btn-field">
-        <button class="btn-submit">Log in</button>
+        <button class="btn-submit">Sign up</button>
     </div>
 
     <div class="form-field invitation-msg">
