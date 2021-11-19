@@ -1,0 +1,38 @@
+.message-block {
+    width: 600px;
+    margin: 200px auto;
+
+    border: 1px solid #cccccc;
+    border-radius: 24px;
+
+    padding: 36px;
+    color: #505050;
+}
+
+.message-block > .message__header > .name-block {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px auto 40px;
+}
+
+.message-block > .message__main {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 32px;
+    color: #404040;
+}
+
+.message__footer {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 32px;
+    color: #404040;
+}
+
+.message__footer > a {
+    text-decoration: none;
+    color: #6b5991;
+    font-weight: bold;
+}
