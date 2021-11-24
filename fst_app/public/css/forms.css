@@ -73,3 +73,14 @@
     color: #6b5991;
     font-weight: bold;
 }
+
+.label-file {
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap; */
+}
+
+.input-file {
+    border: none;
+}
