@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
+use App\Models\Song;
 
 class SongsController extends Controller
 {
@@ -23,11 +24,20 @@ class SongsController extends Controller
         ]);
 
         if ($request->hasFile('audio_file')) {
-            $path = $request->audio_file->path();
+            $audio_name = $request->audio_name;
+            $audio_path = $request->audio_file->store('uploads/songs/'. Auth::user()->id);
+            $user_id = Auth::user()->id;
 
-            $extension = $request->audio_file->extension();
-        
-            $path = $request->audio_file->store('uploads/songs/'. Auth::user()->id);
+            $song = new Song;
+            $song->audio_name = $audio_name;
+            $song->audio_path = $audio_path;
+            $song->user_id = $user_id;
+
+            $song->save();
+
+            return redirect()->intended('/profile');
         }
+
+        return back();
     }
 }
