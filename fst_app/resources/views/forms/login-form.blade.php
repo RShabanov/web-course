@@ -7,7 +7,7 @@
     <div class="form-field">
         <label class="field__label">
             <span for="" class="label-name">Email:</span><br>
-            <input type="email" name="email" class="field__input" value="{{ old('email') }}">
+            <input tabindex="1" type="email" name="email" class="field__input" value="{{ old('email') }}">
             @error("email")
             <div class="error-msg">{{ $message }}</div>
             @enderror
@@ -16,7 +16,7 @@
     <div class="form-field">
         <label class="field__label">
             <span for="" class="label-name">Password:</span><br>
-            <input type="password" name="password" class="field__input" value="{{ old('password') }}">
+            <input tabindex="2" type="password" name="password" class="field__input" value="{{ old('password') }}">
             @error("password")
             <div class="error-msg">{{ $message }}</div>
             @enderror
