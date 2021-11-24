@@ -43,4 +43,10 @@ class SongsController extends Controller
 
         return back();
     }
+
+    public function all()
+    {
+        $songs = Song::all();
+        return view('index')->with(compact('songs'));
+    }
 }

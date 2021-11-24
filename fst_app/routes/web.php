@@ -21,9 +21,7 @@ use App\Http\Controllers\SongsController;
 use App\Http\Controllers\UserController;
 
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [SongsController::class, 'all'])->name('home');
 
 Route::redirect("/home", "/");
 
@@ -43,7 +41,7 @@ Route::prefix("user")
     ->middleware('verified')
     ->group(function() {
 
-    Route::get("/", [UserController::class, 'index'])->name('profile');
+    Route::get("/", [UserController::class, 'index'])->name('user');
 
     Route::get("/add-song", [SongsController::class, 'index'])->name("add-song");
     Route::post("/add-song", [SongsController::class, 'add']);

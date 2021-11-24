@@ -1,7 +1,11 @@
-.user-block {
+.user-block, .audio-flow {
     max-width: 960px;
     width: 100%;
     margin: auto;
+}
+
+.audio-flow {
+    margin-top: 60px;
 }
 
 .user-info {
@@ -26,7 +30,8 @@
     color: #404040;
 }
 
-.user-songs_block {
+.user-songs_block,
+.audio-flow > div {
     margin: 36px 48px 24px;
     padding: 20px;
 }
@@ -37,13 +42,17 @@
     margin: auto 48px;
 }
 
-.user-songs__title {
+.user-songs-block .block-title,
+.audio-flow .block-title {
     font-size: 28px;
     font-weight: bold;
     margin: auto;
     margin-bottom: 6px;
     color: #303030;
-    padding: 10px 20px;
+}
+
+.block-title {
+    padding: 0px 20px;
 }
 
 .song-list {

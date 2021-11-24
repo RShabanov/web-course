@@ -22,7 +22,7 @@ user
             </div>
 
             <div class="user-songs_block">
-                <h2 class="user-songs__title">Your songs</h2>
+                <h2 class="block-title">Your songs</h2>
 
                 <div class="user-songs_songs">
                     <ul class="song-list">
