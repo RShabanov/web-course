@@ -13,7 +13,7 @@ class SongsController extends Controller
     public function index(Request $request)
     {
         if (Auth::check()) redirect("/");
-        return view('sections.selections.songs');
+        return view('pages.user.add-songs');
     }
 
     public function add(Request $request)
@@ -24,18 +24,21 @@ class SongsController extends Controller
         ]);
 
         if ($request->hasFile('audio_file')) {
-            $audio_name = $request->audio_name;
-            $audio_path = $request->audio_file->store('uploads/songs/'. Auth::user()->id);
-            $user_id = Auth::user()->id;
+            $destination_path = 'public/songs/' . Auth::user()->id;
+            $audio_path = $request->audio_file->store($destination_path);
+
+            $audio_path = explode('/', $audio_path);
+            array_shift($audio_path);
+            $audio_path = implode('/', $audio_path);
 
             $song = new Song;
-            $song->audio_name = $audio_name;
+            $song->audio_name = $request->audio_name;
             $song->audio_path = $audio_path;
-            $song->user_id = $user_id;
+            $song->user_id = Auth::user()->id;
 
             $song->save();
 
-            return redirect()->intended('/profile');
+            return redirect()->intended('/user');
         }
 
         return back();

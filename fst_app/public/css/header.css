@@ -36,3 +36,10 @@
     border-radius: 10px;
     padding: 6px 12px;
 }
+
+.site-name {
+    font-size: 24px;
+    color: #f0f0f0;
+    font-style: italic;
+    font-weight: bold;
+}

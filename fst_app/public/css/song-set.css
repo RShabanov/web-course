@@ -1,0 +1,79 @@
+.user-block {
+    max-width: 960px;
+    width: 100%;
+    margin: auto;
+}
+
+.user-info {
+    border: 1px solid #cccccc;
+    border-radius: 12px;
+
+    padding: 20px;
+    padding-bottom: 12px;
+    margin: 60px 68px 24px;
+}
+
+.user-info > .user-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #303030;
+}
+
+.user-info > .user-id {
+    font-style: italic;
+    font-size: 16px;
+    color: #404040;
+}
+
+.user-songs_block {
+    margin: 36px 48px 24px;
+    padding: 20px;
+}
+
+.user-songs {
+    padding: 20px;
+    padding-top: 10px;
+    margin: auto 48px;
+}
+
+.user-songs__title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 6px;
+    color: #303030;
+    padding: 10px 20px;
+}
+
+.song-list {
+    list-style: none;
+    padding: 0;
+}
+
+.song-list .song-item:nth-child(odd) {
+    background-color: #ececec;
+    border-radius: 16px;
+}
+
+.song-item {
+    padding: 6px;
+}
+
+.player__audio {
+    border-radius: 10px;
+    background-color: #594a7a;
+
+    width: 100%;
+}
+
+.song-item > figure {
+    margin: 10px;
+}
+
+.song-item .song-name {
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    color: #101010;
+}
